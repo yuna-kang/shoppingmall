@@ -6,18 +6,23 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.springbook.biz.user.UserDAO;
 import com.springbook.biz.user.UserVO;
-
-@RequestMapping(value="/insertBoard.do")
+@Controller
 public class memberJoinController {
+	
+	@RequestMapping(value = "/memberJoin.do", method = RequestMethod.GET)
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		req.getRequestDispatcher("/memberJoin.jsp").forward(req, resp);
+		req.getRequestDispatcher("../memberJoin.jsp").forward(req, resp);
 	}
-
+	 @RequestMapping(value = "/memberJoin.do", method = RequestMethod.POST) 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		UserVO vo = new UserVO();
@@ -35,7 +40,7 @@ public class memberJoinController {
 		if  (result > 0) {
 			resp.sendRedirect("../login.do");
 		}else {
-			resp.sendRedirect("../insertBoard.do");
+			resp.sendRedirect("/memberJoin.do");
 		}
 	}
 	

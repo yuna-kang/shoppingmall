@@ -51,7 +51,7 @@
 </head>
 <body>
 
-	<form class="registration-form" method="post" action="../memberJoin.do">
+	<form class="registration-form" method="post" action="./memberJoin.do">
 	    <h2>로그인폼</h2>
         <div class="form-group" id="form-id">
             <input type="text" id="id" name="id" placeholder="이메일을 입력해 주세요" >

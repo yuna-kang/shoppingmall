@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.springbook.biz.util.JDBCUtil;
 
-@Repository("userDAO")
+@Repository("BoardDAO")
 public class BoardDAO {
 	private Connection conn = null;
 	private PreparedStatement stmt = null;
