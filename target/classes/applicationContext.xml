@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+    <!-- 패키지를 스캔해준다. 다 해주는 것은 아니고 표시되어진 클래스만 스캔해준다 -> 이것이 어노테이션 -->
+	<!-- <context:component-scan base-package="polymorphism"></context:component-scan> -->
+	<context:component-scan base-package="com.springbook.biz"></context:component-scan>
+	
+	<!-- database.properties 의 파일을 읽어올 수 있게 해준다 -->
+	<context:property-placeholder location="classpath:config/database.properties"/>
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	<property name="driverClassName" value="${jdbc.driver}"></property>
+	<property name="url" value="${jdbc.url}"></property>
+	<property name="username" value="${jdbc.username}"></property>
+	<property name="password" value="${jdbc.password}"></property>
+
+	</bean>
+	
+	<!--JdbcTemplate 클래스를 통해 DB에 접근 (crud) -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		 <property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+		<tx:method name="get*" read-only="true"/> <!-- get메소드 제외하고 트랜잭션 처리를 해줘라 -->
+		<tx:method name="*" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<bean id="sqlsession" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="dataSource" ref="dataSource"/>
+	<property name="configLocation" value="classpth:sql-map-config.xml"/>
+	</bean>
+	
+	<bean class="org.mybatis.spring.SqlSessionTemplate"> 
+		<!-- 생성자 의존 주입 -->
+		<constructor-arg ref="sqlSession"></constructor-arg>
+	</bean>
+	
+	<aop:config>
+		<aop:pointcut expression="execution(* com.springbook.biz..*(..))" id="txPointcut"/> <!-- biz 하위의 모든 메소드를 수정하겠다 -->
+		
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />
+	</aop:config>
+	
+	
+</beans>
