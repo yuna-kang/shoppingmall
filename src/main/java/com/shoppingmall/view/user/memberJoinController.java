@@ -3,23 +3,22 @@ package com.shoppingmall.view.user;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.springbook.biz.user.UserDAO;
 import com.springbook.biz.user.UserVO;
 
-@RequestMapping(value="/insertBoard.do")
-public class memberJoinController {
+@WebServlet("/memberJoin.do")
+public class memberJoinController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		req.getRequestDispatcher("/memberJoin.jsp").forward(req, resp);
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		System.out.println("dopost");
 		UserVO vo = new UserVO();
 		
 		vo.setId(req.getParameter("id"));
