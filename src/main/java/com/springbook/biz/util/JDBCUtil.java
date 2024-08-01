@@ -1,4 +1,4 @@
-package com.shoppingmall.biz.common;
+package com.springbook.biz.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class JDBCUtil {
+	
 	public static Connection getConnection() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -75,4 +76,6 @@ public class JDBCUtil {
 			}
 		}
 	}
+	
+	
 }

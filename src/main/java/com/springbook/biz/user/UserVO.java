@@ -1,6 +1,6 @@
-package com.shoppingmall.biz.user;
+package com.springbook.biz.user;
 
-public class UserVo {
+public class UserVO {
 	private String id;
 	private String password;
 	private String name;
@@ -27,4 +27,7 @@ public class UserVo {
 	public String toString() {
 		return "UserVO [id=" + id + ", password=" + password + ", name=" + name + "]";
 	}
+	
+	
+	
 }

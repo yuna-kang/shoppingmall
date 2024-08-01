@@ -1,4 +1,4 @@
-package com.shoppingmall.biz.user.impl;
+package com.springbook.biz.user;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 
 import org.springframework.stereotype.Repository;
 
-import com.springbook.biz.user.UserVO;
 import com.springbook.biz.util.JDBCUtil;
+
 
 @Repository("userDAO")
 public class UserDAO {
@@ -73,5 +73,5 @@ public class UserDAO {
 		return result;
 		
 	}
-
+	
 }
