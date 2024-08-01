@@ -50,6 +50,7 @@
 
 </head>
 <body>
+<h2>로그인폼</h2>
 	<form class="registration-form">
         <div class="form-group" id="form-id">
             <input type="email" id="email" name="email" placeholder="이메일을 입력해 주세요" >
