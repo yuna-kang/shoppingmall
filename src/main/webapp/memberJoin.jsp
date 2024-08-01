@@ -50,10 +50,11 @@
 
 </head>
 <body>
-<h2>로그인폼</h2>
-	<form class="registration-form">
+
+	<form class="registration-form" method="post" action="../memberJoin.do">
+	    <h2>로그인폼</h2>
         <div class="form-group" id="form-id">
-            <input type="email" id="email" name="email" placeholder="이메일을 입력해 주세요" >
+            <input type="text" id="id" name="id" placeholder="이메일을 입력해 주세요" >
         </div>
         <div class="form-group" id="form-password">
             <input type="password" id="password" name="password" placeholder="비밀번호를 입력해 주세요" required>
@@ -62,18 +63,7 @@
         <div class="form-group" id="form-username">
             <input type="text" id="username" name="name" placeholder="이름을 입력해 주세요" required>
         </div>
-        <div class="form-group" id="form-birth">
-            <input type="text" id="birthdate" name="birthdate" maxlength="8" placeholder=" 생년월일을 입력해 주세요"required>
-        </div>
-        <div class="form-group gender-group">
-            <input type="radio" id="male" name="gender" value="male" >
-            <label for="male" class="gender-option" id="option-man">남자</label>
-            <input type="radio" id="female" name="gender" value="female" >
-            <label for="female" class="gender-option" id="option-woman">여자</label>
-            <input type="radio" id="none" name="gender" value="none" >
-            <label for="none" class="gender-option" id="option-nothing">선택안함</label>
-        </div>
-        <button type="submit" id="signUpButton">가입하기</button>
+        <button type="submit" id="signUpButton" >가입하기</button>
 	<form/>
 
 </body>

@@ -48,9 +48,10 @@ public class UserDAO {
 		return user;
 	}
 	
-	public void insertUser(UserVO vo) {
+	public int insertUser(UserVO vo) {
 		System.out.println("===> JDB로 insertUser() 기능 처리");
 		UserVO user = null;
+		int result = 0;
 		
 		try {
 			
@@ -59,7 +60,8 @@ public class UserDAO {
 			stmt.setString(1, vo.getId());
 			stmt.setString(2, vo.getPassword());
 			stmt.setString(3, vo.getName());
-			rs = stmt.executeQuery();
+			result = stmt.executeUpdate();
+			
 			
 			
 		}catch(Exception e) {
@@ -67,6 +69,8 @@ public class UserDAO {
 		}finally {
 			JDBCUtil.close(stmt,conn);
 		}
+		
+		return result;
 		
 	}
 	
