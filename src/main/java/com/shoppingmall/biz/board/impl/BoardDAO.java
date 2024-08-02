@@ -8,16 +8,16 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.springbook.biz.board.BoardVO;
-import com.springbook.biz.util.JDBCUtil;
+import com.shoppingmall.biz.board.BoardVO;
+import com.shoppingmall.biz.common.JDBCUtil;
 
-@Repository("userDAO")
+@Repository("boardDAO")
 public class BoardDAO {
 	private Connection conn = null;
 	private PreparedStatement stmt = null;
 	private ResultSet rs = null;
 	
-	private final String BOARD_INSERT = " insert into board(ID,score,content,num) values"
+	private final String BOARD_INSERT = " insert into board(ID,score,content,num) values "
 			+" (?,?,?,(select nvl(max(seq),0) + 1 from board)) ";
 	
 	private final String BOARD_LIST = " select id,content,score from (select * from board order by score desc) where rownum <=20 ; ";

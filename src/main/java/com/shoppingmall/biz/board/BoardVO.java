@@ -1,6 +1,5 @@
 package com.shoppingmall.biz.board;
 
-public class BoardVo {
 	public class BoardVO {
 		
 		private String id;
@@ -39,5 +38,5 @@ public class BoardVo {
 
 		
 		
-	}
+	
 }

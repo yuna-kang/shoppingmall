@@ -336,9 +336,9 @@ a.nav-link {
 				</ul>
 
 				<div class="text-end">
-					<button type="button" class="btn btn-warning goRanking">랭킹보기</button>
-					<button type="button" class="btn btn-warning me-2">Login</button>
-					<button type="button" class="btn btn-warning">Sign-up</button>
+					<button type="button" onclick="location.href='#'" class="btn btn-warning goRanking">랭킹보기</button>
+					<button type="button" onclick="location.href='#'" class="btn btn-warning me-2">Login</button>
+					<button type="button" onclick="location.href='#'" class="btn btn-warning">Sign-up</button>
 				</div>
 			</div>
 		</div>
@@ -364,8 +364,9 @@ a.nav-link {
 								<input type="password" id="password" name="password"
 									placeholder="비밀번호를 입력해 주세요" required>
 							</div>
-							<button type="submit" id="signUpButton">로그인하기</button>
-							<form />
+							<button type="submit" id="signUpButton">로그인하기</a></button>
+
+							</form>
 					</div>
 				</div>
 
