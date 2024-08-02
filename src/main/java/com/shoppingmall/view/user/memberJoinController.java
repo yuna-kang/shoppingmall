@@ -13,7 +13,7 @@ import com.shoppingmall.biz.user.impl.UserDAO;
 public class memberJoinController {
 	
 	@RequestMapping(value="/memberJoin.do")
-	public String insertUser(HttpServletRequest req, HttpServletResponse resp) {
+	public String insertUser(HttpServletRequest req) {
 		System.out.println("회원가입 처리");
 		
 		String id = req.getParameter("id");
@@ -29,7 +29,7 @@ public class memberJoinController {
 		
 		userDAO.insertUser(vo);
 		
-		return "redirect:login.do";
+		return "/login.do";
 		
 //		ModelAndView mav = new ModelAndView();
 //		mav.setViewName("redirect:getBoardList.do");

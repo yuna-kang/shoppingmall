@@ -8,7 +8,7 @@ import com.shoppingmall.biz.user.UserVO;
 
 
 
-@Service("UserService")
+@Service("userService")
 public class UserServiceImpl implements UserService {
 	
 	@Autowired
