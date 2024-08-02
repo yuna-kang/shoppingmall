@@ -6,8 +6,10 @@ import java.sql.ResultSet;
 
 import org.springframework.stereotype.Repository;
 
-import com.springbook.biz.user.UserVO;
-import com.springbook.biz.util.JDBCUtil;
+import com.shoppingmall.biz.common.JDBCUtil;
+import com.shoppingmall.biz.user.UserVO;
+
+
 
 @Repository("userDAO")
 public class UserDAO {
@@ -48,10 +50,8 @@ public class UserDAO {
 		return user;
 	}
 	
-	public int insertUser(UserVO vo) {
+	public void insertUser(UserVO vo) {
 		System.out.println("===> JDB로 insertUser() 기능 처리");
-		UserVO user = null;
-		int result = 0;
 		
 		try {
 			
@@ -60,7 +60,6 @@ public class UserDAO {
 			stmt.setString(1, vo.getId());
 			stmt.setString(2, vo.getPassword());
 			stmt.setString(3, vo.getName());
-			result = stmt.executeUpdate();
 			
 			
 			
@@ -69,8 +68,9 @@ public class UserDAO {
 		}finally {
 			JDBCUtil.close(stmt,conn);
 		}
-		
-		return result;
+			
+			
+			
 		
 	}
 

@@ -1,5 +1,8 @@
 package com.shoppingmall.view.user;
 
-public class loginController {
+import org.springframework.web.bind.annotation.RequestMapping;
 
+@RequestMapping(value="/memberJoin.do")
+public class loginController {
+	
 }

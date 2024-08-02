@@ -1,6 +1,6 @@
 package com.shoppingmall.biz.user;
 
-public class UserVo {
+public class UserVO {
 	private String id;
 	private String password;
 	private String name;
