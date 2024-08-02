@@ -38,5 +38,10 @@ package com.shoppingmall.biz.board;
 
 		
 		
+<<<<<<< HEAD
 	}
 
+=======
+	
+}
+>>>>>>> branch 'master' of https://github.com/yuna-kang/shoppingmall.git

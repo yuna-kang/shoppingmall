@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration> <!-- 여기 안에다가 작성을 해야함 -->
+	
+	<!-- resultType="com.springbook.biz.board.BoardVO"를 boardVO에 계속 쓰는게 부담이 될 수도 있음 이걸 해결 하기 위해서 typeAliases를 사용 -->
+	 <!-- Alias 설정 -->
+   <typeAliases>
+      <typeAlias alias="board" type="com.springbook.biz.board.BoardVO" />
+   </typeAliases>
+   
+   <!-- Sql Mapper 설정 -->
+   <mappers>
+      <mapper resource="mappings/board-mapping.xml" />
+   </mappers>
+	
+</configuration>

@@ -296,9 +296,9 @@ a.nav-link {
 				</ul>
 
 				<div class="text-end">
-					<button type="button" class="btn btn-warning goRanking">랭킹보기</button>
-					<button type="button" class="btn btn-warning me-2">Login</button>
-					<button type="button" class="btn btn-warning">Sign-up</button>
+					<button type="button" onclick="location.href='ranking.jsp'" class="btn btn-warning goRanking">랭킹보기</button>
+					<button type="button" onclick="location.href='login.jsp'" class="btn btn-warning me-2">Login</button>
+					<button type="button" onclick="location.href='memberjoin.jsp'" class="btn btn-warning">Sign-up</button>
 				</div>
 			</div>
 		</div>

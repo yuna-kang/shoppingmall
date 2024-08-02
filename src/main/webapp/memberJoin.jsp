@@ -334,9 +334,15 @@ a.nav-link {
             </ul>
 
             <div class="text-end">
+<<<<<<< HEAD
                <button type="button" class="btn btn-warning goRanking">랭킹보기</button>
                <button type="button" class="btn btn-warning me-2">Login</button>
                <button type="button" class="btn btn-warning">Sign-up</button>
+=======
+					<button type="button" onclick="location.href='ranking.jsp'" class="btn btn-warning goRanking">랭킹보기</button>
+					<button type="button" onclick="location.href='login.jsp'" class="btn btn-warning me-2">Login</button>
+					<button type="button" onclick="location.href='memberjoin.jsp'" class="btn btn-warning">Sign-up</button>
+>>>>>>> branch 'master' of https://github.com/yuna-kang/shoppingmall.git
             </div>
          </div>
       </div>
@@ -355,7 +361,11 @@ a.nav-link {
                   <form class="registration-form" method="post"
                      action="./memberJoin.do">
                      <h2>회원가입</h2>
+<<<<<<< HEAD
                      <div class="form-group" id="form-id" >
+=======
+                     <div class="form-group" id="form-id">
+>>>>>>> branch 'master' of https://github.com/yuna-kang/shoppingmall.git
                         <input type="text" id="id" name="id" placeholder="아이디를 입력해 주세요">
                      </div>
                      <div class="form-group" id="form-password">
